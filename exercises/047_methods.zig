@@ -48,7 +48,8 @@ const std = @import("std");
 // Look at this hideous Alien struct. Know your enemy!
 const Alien = struct {
     health: u8,
-
+    
+    // tää on vähä niiku init
     // We hate this method:
     pub fn hatch(strength: u8) Alien {
         return Alien{
@@ -89,7 +90,7 @@ pub fn main() void {
         for (aliens) |*alien| {
 
             // *** Zap the alien with the heat ray here! ***
-            ???.zap(???);
+            heat_ray.zap(alien);
 
             // If the alien's health is still above 0, it's still alive.
             if (alien.health > 0) aliens_alive += 1;
